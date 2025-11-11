@@ -1,27 +1,46 @@
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
+import ParallaxHero from './components/ParallaxHero'
 import Section from './components/Section'
 import ProductGrid from './components/ProductGrid'
 import VerticalFarming from './components/VerticalFarming'
 import AppExperience from './components/AppExperience'
 import Benefits from './components/Benefits'
 import Testimonials from './components/Testimonials'
+import BackgroundFX from './components/BackgroundFX'
+import Showcase3D from './components/Showcase3D'
+import FeatureTimeline from './components/FeatureTimeline'
+import Marquee from './components/Marquee'
 
 function App() {
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-white text-gray-900 relative">
+      <BackgroundFX />
       <Navbar />
       <main>
-        <Hero />
+        <ParallaxHero />
+
+        <div className="py-4">
+          <Marquee items={[
+            'Precision irrigation',
+            'EC/pH dosing',
+            'Climate stability',
+            'Fail-safe offline',
+            'Mobile control',
+            'IoT + Automation',
+            'Hydroponics ready',
+          ]} />
+        </div>
+
+        <Showcase3D />
 
         <Section
           id="about"
-          title="About Ufarms"
-          subtitle="Ufarms helps growers reduce water usage, improve crop quality, and simplify farm management through intelligent automation and real-time monitoring."
+          title="Why Ufarms"
+          subtitle="Automation that respects the craft of growing. Designed to be powerful for pros and effortless for first-time growers."
         >
-          <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="rounded-3xl border border-gray-200 bg-white/80 backdrop-blur p-6 shadow-sm">
             <p className="text-gray-700 text-lg leading-relaxed">
-              From polyhouses to home gardens, Ufarms brings powerful automation that stays farmer-friendly. Our IoT controllers and mobile app work together to monitor sensors, track conditions, and control irrigation, misting, dosing, ventilation, and climate systems.
+              From polyhouses to home gardens, Ufarms brings intelligent control that just works. Our controllers orchestrate irrigation, climate, and dosing based on live data and schedules — so you harvest more with less effort.
             </p>
           </div>
         </Section>
@@ -30,7 +49,7 @@ function App() {
           <ProductGrid />
         </Section>
 
-        <Section id="vertical" title="Vertical Farming" subtitle="Grow vegetables anywhere — from your balcony to your rooftop.">
+        <Section id="vertical" title="Vertical Farming" subtitle="Grow vegetables anywhere — balcony, rooftop, or backyard.">
           <VerticalFarming />
         </Section>
 
@@ -38,20 +57,22 @@ function App() {
           <AppExperience />
         </Section>
 
+        <FeatureTimeline />
+
         <Section id="benefits" title="Benefits">
           <Benefits />
         </Section>
 
-        <Section id="testimonials" title="Testimonials / Real Success Stories">
+        <Section id="testimonials" title="Real Results">
           <Testimonials />
         </Section>
 
-        <section id="cta" className="py-20 sm:py-24 bg-gradient-to-b from-emerald-50 to-white">
+        <section id="cta" className="py-20 sm:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="rounded-3xl bg-emerald-600 text-white p-10 sm:p-16 flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="rounded-3xl bg-gradient-to-br from-emerald-600 to-emerald-700 text-white p-10 sm:p-16 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-xl">
               <div>
-                <h3 className="text-3xl sm:text-4xl font-bold">Ready to make your farm intelligent?</h3>
-                <p className="mt-2 text-emerald-50">Book a personalized walkthrough or get a tailored quote.</p>
+                <h3 className="text-3xl sm:text-4xl font-bold">Bring automation to your farm</h3>
+                <p className="mt-2 text-emerald-50">Get a personalized walkthrough or a tailored quote.</p>
               </div>
               <div className="flex gap-3">
                 <a href="#" className="inline-flex items-center rounded-full bg-white text-emerald-700 font-semibold px-6 py-3 shadow-sm hover:bg-emerald-50 transition">Get Pricing</a>
